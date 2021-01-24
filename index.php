@@ -23,6 +23,14 @@
         <div class="progress" data-label="27'C">
             <span class="value" style="width: 70%;"></span>
         </div>
+        <h1 style="text-align: center;">Control Panel</h1>
+        <div class="tombol">
+            <button style="background-color: green;">Led ON</button>
+            <button style="background-color: red;">Led OFF</button>
+        </div>
+        <div class="indicator">
+            <img src="img/red-led-off-md.png">
+        </div>
 
     </div>
 
