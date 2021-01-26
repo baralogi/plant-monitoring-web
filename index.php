@@ -1,38 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="stylesheet.css">
-</head>
-<body>
-    <header>
-        <h1>Suhu dan Kelembapan Rumah Kaca</h1>
-    </header>
+<?php
+include 'config.php';
 
-    <div class="top-wrapper">
-        <h3>Suhu dan Kelembapan mempengaruhi pertumbuhan tanaman pada rumah kaca ini, pastikan suhu selalu direntang 25 - 30 derajat celcius dan kelembapan direntang nilai 60 - 70 persen</h3>
+$sql = 'SELECT * FROM controls';
+$result = mysqli_query($mysqli, $sql);
 
-        <h2>Suhu</h2>
-        <div class="progress" data-label="27'C">
-            <span class="value" style="width: 27%;"></span>
-        </div>
+if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo 'id : ' . $row['id'] . ' - led : ' . $row['led'] . ' - nilai : ' . $row['value'] . '<br>'; 
+    }
+}
+?>
 
-        <h2>Kelembapan</h2>
-        <div class="progress" data-label="27'C">
-            <span class="value" style="width: 70%;"></span>
-        </div>
-        <h1 style="text-align: center;">Control Panel</h1>
-        <div class="tombol">
-            <button style="background-color: green;">Led ON</button>
-            <button style="background-color: red;">Led OFF</button>
-        </div>
-        <div class="indicator">
-            <img src="img/red-led-off-md.png">
-        </div>
 
-    </div>
-
-</body>
-</html>
